@@ -63,7 +63,7 @@ class SyscallTracer(Application):
             ('show_pid', False),
             ('list_syscalls', False),
             ('show_ip', False),
-            ('debug', True),
+            ('debug', False),
             ('verbose', False),
             ('quiet', False),
         )
