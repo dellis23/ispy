@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 from __future__ import print_function
+from optparse import OptionParser
+from logging import getLogger, error
+import subprocess
+import sys
+from sys import stdout, stderr, exit
+
 from ptrace import PtraceError
-from ptrace.binding import func
 from ptrace.debugger import (
     PtraceDebugger, Application,
     ProcessExit, ProcessSignal, NewProcessEvent, ProcessExecution)
-from ptrace.func_call import FunctionCallOptions
-from sys import stdout, stderr, exit
-from optparse import OptionParser
-from logging import getLogger, error
 from ptrace.error import PTRACE_ERRORS, writeError
-import sys
+from ptrace.func_call import FunctionCallOptions
 
 
 class SyscallTracer(Application):
@@ -190,7 +191,13 @@ class SyscallTracer(Application):
             error("Interrupted.")
         except PTRACE_ERRORS as err:
             writeError(getLogger(), err, "Debugger error")
+        processes = list(self.debugger.list)
         self.debugger.quit()
+
+        # python-ptrace seems iffy on actually detaching sometimes, so we make
+        # sure we let the process continue
+        for process in processes:
+            subprocess.check_output(['kill', '-cont', str(process.pid)])
 
     def createChild(self, program):
         pid = Application.createChild(self, program)
