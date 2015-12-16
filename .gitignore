@@ -1,0 +1,6 @@
+.ropeproject
+*.sw?
+dist
+MANIFEST
+ispy.egg-info
+*.pyc
