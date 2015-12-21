@@ -2,14 +2,6 @@
 
 `ispy` is a python tool for monitoring the output of terminals and processes.
 
-## Installation
-
-    pip install ispy
-
-## Usage
-
-    # ispy <pid_to_watch>
-
 ## Demo
 
 `ispy` watching a bash session that lists some files and opens `vim`:
@@ -19,6 +11,21 @@
 The same thing, using `strace`:
 
 ![strace watching writes demo](https://github.com/dellis23/ispy/blob/master/img/ispydemo-strace.gif)
+
+## Installation
+
+    pip install ispy
+    
+Alternatively, if you aren't a Python person or don't want to install it
+(since it must be run as root), you can download a fully packaged 
+[`pex`](https://pex.readthedocs.org/en/latest/) file and run without 
+installing:
+
+    wget https://github.com/dellis23/ispy/blob/master/bin/pex/ispy.pex?raw=true -O ispy; chmod +x ispy
+
+## Usage
+
+    # ispy <pid_to_watch>
 
 ## Use Cases
 
