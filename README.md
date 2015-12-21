@@ -43,3 +43,7 @@ This has been tested as working on:
 This has been tested as **not** working on:
 
  * OSX
+
+## Thanks
+
+Thanks to the creator and maintainers of [python-ptrace](https://bitbucket.org/haypo/python-ptrace/); this project depends on it.
