@@ -1,5 +1,4 @@
 # ispy
-********************************************************************************
 
 `ispy` is a python tool for monitoring the output of terminals and processes.
 
@@ -26,8 +25,21 @@ The same thing, using `strace`:
  * Watching someone else's terminal
  * Watching the output of a backgrounded process
 
-## Caveats
+## Notes
+
+### Take care in production
 
 This uses the same system call as `strace` (`ptrace`), which is heavy-handed
 and has a performance impact.  It is not recommended to use in production or
 against mission-critical applications.  It's also written in Python, so it's even slower.
+
+### Supported OSs
+
+This has been tested as working on:
+
+ * Ubuntu
+ * CentOS
+
+This has been tested as **not** working on:
+
+ * OSX
