@@ -30,5 +30,4 @@ The same thing, using `strace`:
 
 This uses the same system call as `strace` (`ptrace`), which is heavy-handed
 and has a performance impact.  It is not recommended to use in production or
-against mission-critical applications.  It's also written in Python, so it's 
-probably even slower than `strace`.
+against mission-critical applications.  It's also written in Python, so it's even slower.
