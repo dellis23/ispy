@@ -4,3 +4,4 @@ dist
 MANIFEST
 ispy.egg-info
 *.pyc
+.DS_Store
