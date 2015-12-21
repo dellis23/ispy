@@ -4,7 +4,7 @@
 
 ## Demo
 
-`ispy` watching a bash session that lists some files and opens `vim`:
+`ispy` watching a `bash` session that lists some files and opens `vim`:
 
 ![ispy demo](https://github.com/dellis23/ispy/blob/master/img/ispydemo.gif)
 
@@ -34,7 +34,13 @@ installing:
 
 ## Notes
 
-### Take care in production
+### **Not** intended for production!
+
+It's probably buggy.
+
+This was mainly an exercise in learning about `ptrace` for myself.  I
+haven't done anything more than smoke testing on a couple of 
+operating systems.
 
 This uses the same system call as `strace` (`ptrace`), which is heavy-handed
 and has a performance impact.  It is not recommended to use in production or
