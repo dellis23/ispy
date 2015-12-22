@@ -137,9 +137,9 @@ class SyscallTracer(Application):
     def processExited(self, event):
         # Display syscall which has not exited
         state = event.process.syscall_state
-        if (state.next_event == "exit") \
-                and (not self.options.enter) \
-                and state.syscall:
+        if (state.next_event == "exit"
+                and (not self.options.enter)
+                and state.syscall):
             self.displaySyscall(state.syscall)
 
     def prepareProcess(self, process):
